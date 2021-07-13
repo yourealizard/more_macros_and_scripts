@@ -1,0 +1,12 @@
+Function CusVlookup(lookupval, lookuprange As Range, indexcol As Long)
+'updateby Extendoffice
+Dim x As Range
+Dim result As String
+result = ""
+For Each x In lookuprange
+    If x = lookupval Then
+        result = result & " " & x.Offset(0, indexcol - 1)
+    End If
+Next x
+CusVlookup = result
+End Function
